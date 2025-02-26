@@ -1,0 +1,134 @@
+/* styles.css */
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #f1f1f1;
+    --accent-color: #FF9800;
+    --text-color: #333;
+    --background-color: #e3f2fd;
+    --button-hover: #45a049;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+    animation: fadeIn 2s ease-in-out;
+}
+
+header p {
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 150px);
+    padding: 1rem;
+}
+
+form {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+    padding: 2rem;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+}
+
+form h2 {
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+    font-size: 1.8rem;
+}
+
+form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    text-align: left;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+form input, form select, form button {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1.2rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+form input:focus, form select:focus {
+    border-color: var(--accent-color);
+    outline: none;
+    box-shadow: 0 0 4px var(--accent-color);
+}
+
+form button {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+form button:hover {
+    background-color: var(--button-hover);
+    transform: scale(1.05);
+}
+
+footer {
+    text-align: center;
+    background-color: var(--text-color);
+    color: white;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+@media (max-width: 600px) {
+    form {
+        padding: 1.5rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
