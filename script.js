@@ -1,3 +1,5 @@
+const backendURL = "https://kas-visitor-system.onrender.com";
+
 document.getElementById('visitor-form').addEventListener('submit', async function (event) {
     event.preventDefault(); // Prevent default form submission
 
@@ -11,7 +13,7 @@ document.getElementById('visitor-form').addEventListener('submit', async functio
 
     try {
         // Send data to backend
-        const response = await fetch('http://127.0.0.1:5000/submit', {
+        const response = await fetch(`${backendURL}/submit`, {  // ✅ Use backticks here!
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -22,7 +24,7 @@ document.getElementById('visitor-form').addEventListener('submit', async functio
         const result = await response.json();
 
         if (response.ok) {
-            alert('PDF Generated! Download it here: ' + result.downloadLink);
+            alert('PDF Generated! Download it here: ' + backendURL + result.downloadLink);
         } else {
             alert('Error: ' + result.error);
         }
