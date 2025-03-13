@@ -11,7 +11,7 @@ document.getElementById('visitor-form').addEventListener('submit', async functio
 
     try {
         // Send data to backend
-        const response = await fetch('http://127.0.0.1:5000/submit', {
+        const response = await fetch('https://kas-visitor-system-i5hj.onrender.com/submit', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
