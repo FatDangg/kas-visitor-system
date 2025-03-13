@@ -5,7 +5,6 @@ from reportlab.lib.units import mm
 from reportlab.lib.utils import ImageReader
 from flask_cors import CORS
 import os
-import cloudconvert
 import json
 import time
 import threading
@@ -18,9 +17,6 @@ CORS(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///visitors.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
-
-# Configure CloudConvert (if used elsewhere)
-cloudconvert.configure(api_key='API_KEY', sandbox=False)
 
 # Define the Visitor model
 class Visitor(db.Model):
